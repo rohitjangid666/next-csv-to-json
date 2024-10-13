@@ -2,16 +2,18 @@
 
 import { useState } from 'react';
 
+import CSVSelectorPapaParse from '@/components/CSVSelectorPapaParse';
 import CSVReader from '@/components/CSVReader';
-import CSVSelector from '@/components/CSVSelector';
 
-export default function Home() {
+const PapaParse = () => {
   const [data, setData] = useState<string[][]>([]);
 
   return (
     <>
-      <CSVSelector onChange={data => setData(data)} />
+      <CSVSelectorPapaParse onChange={data => setData(data)} />
       <CSVReader data={data} />
     </>
   );
-}
+};
+
+export default PapaParse;
